@@ -4,3 +4,7 @@
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+
+let myNumber = 6;
+
+console.log(myNumber);
