@@ -6,3 +6,8 @@ const ONE_HUNDRED = 100;
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+
+
+const percentage = (64 / 8) * ONE_HUNDRED; 
+console.log( percentage);
+
