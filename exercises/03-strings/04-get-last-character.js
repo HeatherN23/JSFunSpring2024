@@ -9,3 +9,8 @@ let str = "Wes Craven"; // e.g.
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+
+let strLength = str.length;
+console.log(strLength);
+const lastCharacter = str.substring(strLength-1);
+console.log(lastCharacter);

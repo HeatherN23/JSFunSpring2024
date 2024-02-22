@@ -3,3 +3,6 @@
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+let myName = "Heather Nygaard";
+
+console.log(myName);
