@@ -10,3 +10,12 @@
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+
+const countNumberOfDigits = ( num ) => {  
+  let strNum = num.toString();     // to find the length of an integer, conver to string
+  let length = strNum.length;      // get the length of the string  
+  return length;
+}
+
+let length = countNumberOfDigits ( 3565545 );
+console.log( length );

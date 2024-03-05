@@ -16,3 +16,10 @@
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+
+const multiply = (num1, num2) => {
+  return num1 * num2;
+};
+
+let product = multiply( 7, 8);
+console.log(product);

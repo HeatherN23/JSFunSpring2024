@@ -13,3 +13,9 @@
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+
+const returnGreeting = ( name ) => {
+  return( "Hello " + name + "!");
+};
+
+let greeting = returnGreeting( "Heather" );

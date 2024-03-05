@@ -16,3 +16,14 @@
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+
+const lowerCaseString = (string) => {
+  if (typeof string != 'string'){      
+    return; 
+  } else {
+    return string.toLowerCase();
+  }
+}; 
+
+let smaller = lowerCaseString("HEATHER");
+console.log(smaller);
