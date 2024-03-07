@@ -10,9 +10,10 @@ let num = 8; // e.g.
 // WRITE YOUR ANSWER BELOW THIS LINE
 
 let isEven = false;
-console.log( num );
-//console.log( typeof.num);
+
 if ( num % 2 == 0 ) {
   isEven = true;  
 }
 console.log( isEven );
+
+
