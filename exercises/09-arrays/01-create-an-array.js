@@ -4,3 +4,4 @@
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+const restaurants = ["Diners", "Fastfood", "Upscale"];

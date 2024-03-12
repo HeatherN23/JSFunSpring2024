@@ -11,3 +11,26 @@ let string = "racecar";
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+
+let isPalindrome=false;
+
+//const skillString = "JavaScript, React, CSS";
+let newString1= string.split("");
+let newString2 = string.split("");
+console.log(newString1);
+console.log(newString2);
+
+newString2.reverse();
+console.log(newString2);
+
+newString1 = newString1.join("");
+console.log(newString1);
+newString2 = newString2.join("");
+console.log(newString2);
+
+if( newString1 === newString2 ) {
+  isPalindrome=true;
+}
+
+console.log(isPalindrome);
+

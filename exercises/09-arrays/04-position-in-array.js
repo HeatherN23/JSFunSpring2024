@@ -7,6 +7,8 @@ let results = [
   "Fathima Kaur",
 ];
 
+let [racer] = results;
+
 /**
  * The array "results" lists runners in the order
  * in which they placed within a race.
@@ -19,3 +21,6 @@ let results = [
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+
+let place = results.indexOf("Jian Hou")+1;
+console.log(place);
