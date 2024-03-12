@@ -7,3 +7,17 @@ let numbers = [10000, -8, 10, 0.7]; // e.g.
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+
+let highest = 0;
+const findHighest = () => {  
+  for( let i = 0 ; i < numbers.length ; i++) {  
+    if ( numbers[i] > highest ){            
+      highest = numbers[i];       
+    }  
+  } 
+  return highest;
+};
+
+highest = findHighest();
+console.log("Highest value is: " + highest);
+
