@@ -1,6 +1,6 @@
 let student = {
   name: "Maria Gómez",
-  skills: ["JavaScript"],
+  skills: ["JavaScript"]
 };
 
 /**
@@ -15,3 +15,8 @@ let student = {
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+
+student.name = "Heather Nygaard";
+student.skills.push("Dancing");
+
+console.log(student);

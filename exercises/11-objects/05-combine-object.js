@@ -7,9 +7,16 @@ const obj2 = { lastName: "Kent" }; // e.g.
  *
  * @example
  * console.log(myObject);
- * // { firstName: "Clark", lastName: "Kent" }
+ * // { firstName: "Clark", 
+ *      lastName: "Kent" }
  *
  * Your answer should still work when "obj1" and "obj2" are different objects.
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+const myObject = {
+  firstName: obj1.firstName,
+  lastName: obj2.lastName
+};
+
+console.log(myObject)
