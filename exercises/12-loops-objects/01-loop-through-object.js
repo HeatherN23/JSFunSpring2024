@@ -17,3 +17,9 @@ const links = {
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+let html="";
+for (let [critter, href] of Object.entries(links)) {
+  html += `<a href="${href}">${critter}</a>`;  
+  console.log(html);
+}
+
