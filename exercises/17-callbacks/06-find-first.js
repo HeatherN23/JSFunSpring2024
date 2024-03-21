@@ -56,8 +56,8 @@ const findFirst = (arrayOfNum, callback) => {
 
 
  // Uncomment me to test your answer in Quokka
-  console.log( findFirst([1, 3, 7, 8, 20], isNumberEven) )
-  console.log( findFirst([4, 500, 30, 2], isNumberTwoDigits) )
+  console.log( findFirst([1, 3, 7, 8, 20], isNumberEven) );
+  console.log( findFirst([4, 500, 30, 2], isNumberTwoDigits) );
  
 
 // DO NOT DELETE BELOW. It is for the tests.

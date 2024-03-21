@@ -30,7 +30,7 @@ const doubleArray = (originalArray, doubleNumber) => {
   for (let i=0; i<originalArray.length; i++){
     console.log(originalArray[i]);
     let doubledNum = doubleNumber(originalArray[i]);
-    console.log(doubledNum)
+    console.log(doubledNum);
     result.push(doubledNum);
   }
   return result;
