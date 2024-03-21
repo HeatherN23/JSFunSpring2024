@@ -1,6 +1,6 @@
 // e.g.
 const format = (string1, string2) => {
-  return `- ${string1}
+  return `- ${string1} 
 - ${string2}`;
 };
 
@@ -23,10 +23,11 @@ const format = (string1, string2) => {
 
 const formatString = (string1, string2, callback) => {
   // WRITE YOUR ANSWER IN HERE
+  return callback(string1, string2);
 };
 
 // Uncomment me to test in Quokka
-// console.log( formatString("Wash dishes", "Do laundry", format) );
+console.log( formatString("Wash dishes", "Do laundry", format) );
 
 // IGNORE THIS BELOW. It is for the tests.
 

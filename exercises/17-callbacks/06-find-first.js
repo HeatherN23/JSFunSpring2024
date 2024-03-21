@@ -42,13 +42,23 @@ const isNumberTwoDigits = (num) => {
 
 const findFirst = (arrayOfNum, callback) => {
   // WRITE YOUR ANSWER IN HERE
+  for (let i=0; i<arrayOfNum.length; i++){
+    console.log(arrayOfNum[i]);
+    let bool = callback(arrayOfNum[i]);
+    //let isTwoDigits = isNumberTwoDigits(arrayOfNum[i]);
+    console.log(bool);    
+    
+    if(bool){
+      return arrayOfNum[i];
+    }    
+  }
 };
 
-/**
- * Uncomment me to test your answer in Quokka
- * console.log( findFirst([1, 3, 7, 8, 20], isNumberEven) )
- * console.log( findFirst([4, 500, 30, 2], isNumberTwoDigits) )
- */
+
+ // Uncomment me to test your answer in Quokka
+  console.log( findFirst([1, 3, 7, 8, 20], isNumberEven) )
+  console.log( findFirst([4, 500, 30, 2], isNumberTwoDigits) )
+ 
 
 // DO NOT DELETE BELOW. It is for the tests.
 
