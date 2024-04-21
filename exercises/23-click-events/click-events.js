@@ -17,4 +17,20 @@
    * 2. Change the text to say e.g. "Loading ..." once it is clicked.
    */
   // Write your answer here
+
+  const alertUser = () => {
+    alert("Alert Me!");
+  };
+
+  let button = document.querySelector(".btn-success");
+  button.addEventListener("click", alertUser);
+
+  let button2 = document.querySelector(".btn-warning");
+  console.log(button2);  
+  button2.addEventListener("click", ()=> {
+    if (button2.disabled === false) {}
+      button2.disabled = true;
+      button2.textContent = ".... Loading";
+  });
+
 })();
