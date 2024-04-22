@@ -26,11 +26,10 @@
   button.addEventListener("click", alertUser);
 
   let button2 = document.querySelector(".btn-warning");
-  console.log(button2);  
   button2.addEventListener("click", ()=> {
-    if (button2.disabled === false) {}
+    if (button2.disabled === false) {
       button2.disabled = true;
       button2.textContent = ".... Loading";
-  });
+}});
 
 })();
