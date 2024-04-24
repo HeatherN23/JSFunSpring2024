@@ -42,7 +42,7 @@
   };
   
   const dismissBtn = document.querySelector("#acceptCookiesButton");
-  dismissBtn. addEventListener("click", dismissCookies);
+  dismissBtn.addEventListener("click", dismissCookies);
 
   const viewCommentsBtn = document.querySelector("#toggleComments");
   viewCommentsBtn.addEventListener("click", toggleComments);
