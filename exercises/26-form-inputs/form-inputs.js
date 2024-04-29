@@ -41,9 +41,9 @@ titleDD.addEventListener("change", e => {
   // Write your answer here.
   //const checkBox = document.querySelector("#shouldSendPromotions");
   const checkBox = document.querySelector("#shouldSendPromotions");
-  console.log(checkBox);
+  //console.log(checkBox);
   const showHidden = document.querySelector(".hidden");
-  console.log(showHidden);
+  //console.log(showHidden);
 
   checkBox.addEventListener("click", e => {
     console.log(e);
@@ -54,8 +54,7 @@ titleDD.addEventListener("change", e => {
     }
   });
    
-  
-
+ 
   /**
    * Problem 3: Input validation
    *
@@ -77,5 +76,5 @@ titleDD.addEventListener("change", e => {
       errorMsg.style.display = "block";
     }
   });
-  
+
 })();

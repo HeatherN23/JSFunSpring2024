@@ -35,10 +35,13 @@
   <body class="d-flex flex-column">
     <section class="bg-warning pt-4 pb-2 flex-fill">
       <div class="container">
-        <!-- Handle this form -->
-        <form class="mb-3">
+
+        <!-- SEARCH BOX -->
+        <form id="form" class="mb-3">
           <div class="input-group">
             <input
+              id="search"
+              name="search"
               type="search"
               placeholder="Search for oceans near Albany, NY"
               aria-label="Search for oceans near Albany, NY"
@@ -50,34 +53,34 @@
           </div>
         </form>
 
+
         <!-- Display "No results for ___ found" inside of this <p></p> -->
-        <p class="text-dark"></p>
+        <p id="results" class="text-dark"></p>
       </div>
     </section>
 
     <section class="pt-4 pb-4 flex-fill">
       <!-- See terms-on-load.png, terms-on-error.png, and terms-on-success.png for examples of what this should look like. -->
       <div class="container d-flex justify-content-center">
-        <form>
+
+        <!-- TERMS & CONDTIONS SECTION  -->
+        <form id="agreement">
           <div class="form-inline">
-            <div class="form-check form-check-inline">
-              <!-- The "is-invalid" class here makes the "I Agree ..." red. The input should only have this class if the user did not agree to the terms and conditions -->
-              <input class="form-check-input is-invalid" type="checkbox" />
-              <label class="form-check-label" for="terms"
-                >I Agree to the Terms and Conditions</label
-              >
+            <div class="form-check form-check-inline">                            
+              <input id="terms" class="form-check-input" type="checkbox" name="terms" value=""/>
+              <label id="termsText" class="form-check-label" for="terms">I Agree to the Terms and Conditions</label>
             </div>
 
-            <button type="submit" class="btn btn-primary">Continue</button>
+            <button id="submit" type="submit" class="btn btn-primary">Continue</button>
           </div>
 
           <!-- Only display me if the user did not agree to the terms and conditions -->
-          <div class="text-danger">
+          <div id="warning" class="text-danger hidden">
             <small>You must agree to the terms and conditions</small>
           </div>
 
           <!-- Only display after the user clicks on the "Continue" button and he has agreed to the terms -->
-          <div class="text-success">
+          <div id="success" class="text-success">
             <small>Thank you for signing up!</small>
           </div>
         </form>

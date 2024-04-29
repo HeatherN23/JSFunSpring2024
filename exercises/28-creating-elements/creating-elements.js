@@ -12,7 +12,7 @@
    */
 
   const oceanInput = document.querySelector("#oceanInput");
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -30,11 +30,16 @@
      */
 
     // Write you JavaScript here
+    const newElement = document.createElement('p');
+    console.log(newElement);
+    const newContent = document.createTextNode('No results for ocean found.');
+    newElement.appendChild(newContent);
+    console.log("newElement is: " + newElement.attributes);
+    const currentDiv = document.querySelector(".container");
+    document.body.insertBefore(newElement, currentDiv);
   };
 
-  document
-    .querySelector("#handleThisForm")
-    .addEventListener("submit", handleSubmit);
+  document.querySelector("#handleThisForm").addEventListener("submit", handleSubmit);
 
   /**
    * Problem 2: Create a movie description from an object
