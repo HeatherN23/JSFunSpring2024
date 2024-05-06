@@ -11,5 +11,24 @@
    *    "status": "success",
    *    "message": "https://images.dog.ceo/breeds/poodle-toy/n02113624_9550.jpg"
    * }
-   */
-})();
+  */
+
+  //Listen for the button to get clicked, then get the picture from the url.
+  const dogBtn = document.querySelector("#button").addEventListener("click", function (e) {
+   
+    axios.get('https://dog.ceo/api/breeds/image/random')
+      .then( response => {
+        console.log(response);
+        //const dogImg = document.querySelector("#image") 
+          const url = response.data.message;
+          const image = document.querySelector('#image');
+          image.src = url;
+        }) // success*/       
+      })
+      .catch( function( error ) {
+        console.log(error);
+      });
+  }) ();
+
+
+  

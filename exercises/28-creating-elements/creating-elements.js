@@ -30,16 +30,22 @@
      */
 
     // Write you JavaScript here
-    const newElement = document.createElement('p');
-    console.log(newElement);
-    const newContent = document.createTextNode('No results for ocean found.');
-    newElement.appendChild(newContent);
-    console.log("newElement is: " + newElement.attributes);
-    const currentDiv = document.querySelector(".container");
-    document.body.insertBefore(newElement, currentDiv);
+    const results = document.createElement('div');
+    
+    // Add the text to the div element
+    results.textContent = `No results for ${ocean} found.`;
+
+    // Add the class to the div element
+    results.classList.add("italic");
+
+    // Add the results to the page
+    const parent = document.querySelector("#searchEngine");
+    parent.appendChild(results);    
   };
 
-  document.querySelector("#handleThisForm").addEventListener("submit", handleSubmit);
+  document
+    .querySelector("#handleThisForm")
+    .addEventListener("submit", handleSubmit);
 
   /**
    * Problem 2: Create a movie description from an object
@@ -63,14 +69,14 @@
    */
 
   // Update me
-  const movieHtml = `<img src="_____" />
+ let  movieHtml = `<img src="${movie.imgSrc}" />
   <div class="flex-auto my-4">
-    <h1 class="text-2xl mb-4">_____ <small>(_____)</small></h1>
+    <h1 class="text-2xl mb-4">${movie.title}<small>(${movie.year})</small></h1>
     <p clas="mb-4">
       ${movie.description}
     </p>
   </div>`;
-
+  
   /**
    * STEP 2
    * Use insertAdjacentHTML or innerHTML to add movieHTML to the page.
@@ -78,6 +84,8 @@
    */
 
   // Write you JavaScript here
+
+  document.querySelector("#movie").innerHTML = movieHtml;
 
   /**
    * Problem 3: Create a ChatGPT conversation from an array of objects
@@ -124,5 +132,17 @@
     </div>
    */
 
+    const conversation = document.querySelector("#conversation");
   // Write you JavaScript here
+
+  conversationDialogues.forEach((dialogue) => {
+    let conversationHtml = `<div class="border-solid border-2 border-slate-200 rounded p-2 mb-4">
+    <div class="font-bold">${dialogue.author}</div>
+    <p>
+      ${dialogue.message}
+    </p>
+  </div>`;
+  conversation.insertAdjacentHTML("beforeEnd", conversationHtml);
+});
+
 })();
