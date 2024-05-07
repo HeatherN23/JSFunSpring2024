@@ -17,18 +17,30 @@
   const dogBtn = document.querySelector("#button").addEventListener("click", function (e) {
    
     axios.get('https://dog.ceo/api/breeds/image/random')
-      .then( response => {
-        console.log(response);
-        //const dogImg = document.querySelector("#image") 
-          const url = response.data.message;
-          const image = document.querySelector('#image');
-          image.src = url;
-        }) // success*/       
+      .then( response => {                                //response is the GET returned in object form
+          const url = response.data.message;              // the url of the response object
+          const image = document.querySelector('#image'); // get the element with the image id
+          image.src = url;                                // swap out the urls
+        });     
       })
       .catch( function( error ) {
         console.log(error);
       });
-  }) ();
+  }) ();                                                 // REMEMBER TO INVOKE THE FUNCTION WITH THE ()!!!
 
-
+/*  ALTERNATE METHOD
+  axios({
+            method: "GET",
+            url: "https://dog.ceo/api/breeds/image/random",
+        })
+            // If the GET request is successful, the #image elements' source is updated with a new, random image source url.
+            .then((response) => {
+                const image = document.querySelector("#image");
+                image.src = response.data.message;
+            })
+            // Otherwise, an error is thrown.
+            .catch((err) => {
+                console.error(err);
+            });    
+*/
   
