@@ -9,7 +9,7 @@
    * https://ron-swanson-quotes.herokuapp.com/v2/quotes
    */
 
-  
+ /*
   const btn = document.querySelector(".btn").addEventListener('click', updateQuote => {
     
     axios.get('https://ron-swanson-quotes.herokuapp.com/v2/quotes')     // get the quote from the url
@@ -22,7 +22,25 @@
       .catch( function( error ) {
           console.log(error);
       });     
+*/
 
+    
+    async function updateQuote(){  
+      try  { 
+        let response = await axios.get('https://ron-swanson-quotes.herokuapp.com/v2/quotes');     // get the quote from the url        
+        const newQuote = response.data;                               // data of the response object
+        const quote = document.querySelector("#quote");               // get the quote element
+        quote.textContent = newQuote;                                 // display the new quote.      
+        }
+        catch(err){
+         return console.error(err);
+      }
+      
+    }
+    const btn = document.querySelector(".btn");
+    btn.addEventListener('click', updateQuote);
+    
+ 
   })();
   
   
