@@ -279,7 +279,7 @@ Then it should take a minute for the changes to go into effect.
 
 If you decided to use a bundler or NPM, its a bit more complicated:
 
-- [Vite with Github Actions](https://vitejs.dev/guide/static-deploy#github-pages)
+- [Vite with Github Actions](https://vitejs.dev/guide/static-deploy#github-pages) (or see [our Vite.js tutorial](../../examples/vite/README.md#deploying))
 - [Webpack deploy script](https://github.com/turingschool-examples/webpack-starter-kit/blob/main/gh-pages-procedure.md)
 - [Parcel.js deploy script](https://gist.github.com/OleksiyRudenko/7e94aa2d18927e0c5e65b2b5a1c0e375)
 - [NPM with Github Actions](https://github.com/marketplace/actions/deploy-to-github-pages)
