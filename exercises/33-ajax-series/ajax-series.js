@@ -37,14 +37,14 @@
          ddHtml += `<option value="${character.id}"> ${character.name} </option>`;
       }
 
-      characterDD.innerHTML = ddHtml;                       // display the list of characters in DD
+      characterDD.innerHTML = ddHtml;                         // display the list of characters in DD
     }
     catch(error) {
       console.error(error);                                   // display error
     }
   }           /*******        END FUNCTION       ********/
 
-  
+
   let characterDD = document.querySelector("#dropdown");
   characterDD.addEventListener('click', async function(e) {                //listen for the DD to be clicked
     //console.log(e.target.value);
