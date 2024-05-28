@@ -21,6 +21,14 @@ body {
   
 }
 
+label {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(22, 57, 122);
+  font-size: large;
+  text-align: left;
+  padding: 50px 20px 10px 0px;
+}
+
 .container {
   border: 2px solid, black;  
   display: flex;
@@ -34,11 +42,24 @@ body {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: larger;
 }
-
+/*
 .searchForm {
   padding: 20px;
   
 }
+*/
+/*
+.searchInput {
+  //background-color: rgb(224, 231, 127); 
+  padding: 50px 0px 50px 0px;
+}
+*/
+
+.artDD {
+  font-size: larger;
+  min-width: 200px;
+}
+/*
 .searchBox{
   background-color: rgb(224, 231, 127);
   font-size: large;
@@ -49,14 +70,14 @@ body {
   background-color:rgb(112, 192, 230);
   font-size: large;
 }
-
+*/
 .images {
   background-color: aqua;
-  border 2px soldi black;
+  /*border 2px soldi black;*/
 }
 
 .gallery {
-  border: 2px solid rgb(3, 5, 133);
+  /*border: 2px solid rgb(3, 5, 133);*/
   padding: 10%;
   display: flex;
   flex-flow: row;
@@ -68,7 +89,7 @@ body {
 
 .artData {
   padding: 20px;
-  border: 2px solid purple;  
+  /*border: 2px solid purple;  */
 }
 
 

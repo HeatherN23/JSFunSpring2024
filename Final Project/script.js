@@ -16,18 +16,32 @@
 //https://collectionapi.metmuseum.org/public/collection/v1/search?dateBegin=1700&dateEnd=1800&q=African
 
 //let axios = "https://unpkg.com/axios/dist/axios.min.js"
+  
+  
+  //const searchForm = document.querySelector('#searchForm');
+  //const searchText = document.querySelector('#searchText');
+  
+  const artistDD = document.querySelector("#artDD");
+  const artImg = document.querySelector(".artImg");
+  const artist = document.querySelector(".artist");
+  const artTitle = document.querySelector(".artTitle");  
+  const artDate = document.querySelector(".artDate");
+  const artDesc = document.querySelector(".artDesc");
+  
   // listen for events
-  
-  const searchForm = document.querySelector('#searchForm');
-  const searchText = document.querySelector('#searchText');
-  
-  searchForm.addEventListener('submit', (e) => {
-    console.log('I was clicked!');
+  //searchForm.addEventListener('submit', (e) => {
+  artistDD.addEventListener('change', (e) => {
+    //console.log('I was clicked!');
     
     e.preventDefault();                     // PREVENT THE FORM FROM REFRESHING
-    console.log(searchText.value);
+    //console.log(artistDD.value);
     //const searchText2 = searchText.value;
-    getArtData(searchText.value);
+    if(artistDD.value){
+      getArtData(artistDD.value);
+    } else {
+      console.log("Pick an artist");
+    }
+    
     //console.log(searchText2);
     //results.textContent=`No results for ${displayResults} found`; 
 
@@ -47,18 +61,24 @@ const getArtData = function(search) {
       return response.json();
     })
     .then(response => {       
-      // loop thru the response object Id's and use the ID's to get the art work Objects
-      
-      for (let i=0; i < 10; i++ ){
+      let html = "";
+      // loop thru the response object Id's and use the ID's to get the art work Objects      
+      for (let i=0; i < 5; i++ ){
         //console.log("Id: #" + i + ": " + response.objectIDs[i]);
         let fetchURL = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${response.objectIDs[i]}`;
-        console.log(fetchURL);
+        //console.log(fetchURL);
         fetch(fetchURL)                       // get the artwork object
           .then( response => {
             return response.json();           // convert the object to json
           })
           .then ( response => {
-            console.log(response.title);
+            //console.log(response.title);
+            artImg.src=response.primaryImageSmall;
+            artist.innerHTML=`Artist: ${search}`;
+            artTitle.innerHTML=`Title: ${response.title}`;
+            artDate.innerHTML=`Date: ${response.objectDate}`;
+            artDesc.innerHTML=`Description: <a href="${response.objectURL}">${response.objectURL}</a>`;
+            
           });
           
       }      
