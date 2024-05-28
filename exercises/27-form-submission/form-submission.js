@@ -29,6 +29,7 @@
   form.addEventListener("submit", (e) => {
     e.preventDefault();                     // REVENT THE FORM FROM REFRESSING
     const displayResults = search.value;
+    console.log(displayResults);
     results.textContent=`No results for ${displayResults} found`; 
   });
 
@@ -51,7 +52,7 @@
    */
   // Write your answer here
 
-  
+  /*
   const agreementForm = document.querySelector('#agreement');  
   const terms = document.querySelector('#terms');         //checkbox
   
@@ -77,5 +78,5 @@
     }
 
    });
-
+*/
 })();
