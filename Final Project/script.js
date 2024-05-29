@@ -90,12 +90,13 @@ async function getArtData(search) {
       return response.json();
     })
     .then((response) => {
-      let html = "";
+      //let html = "";
       // loop thru the response object Id's and use the ID's to get the art work Objects
-      console.log(response.objectIDs.length);
-      for (let i = 0; i < 3; i++) {
+      console.log(response.objectIDs);
+      for (let i = 0; i < response.objectIDs.length  && i <=8; i++) {
         //console.log("Id: #" + i + ": " + response.objectIDs[i]);
         //Fetch the artwork by the artist.
+        //console.log(`objectIDs is ${response.objectIDs[i]}`);
         let fetchURL = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${response.objectIDs[i]}`;
         //console.log(fetchURL);
         fetch(fetchURL) // get the artwork object
@@ -103,78 +104,23 @@ async function getArtData(search) {
             return response.json(); // convert the object to json
           })
           .then((response) => {
-            console.log("Artist is " + response.artistDisplayName);
-            console.log("Image is " + response.primaryImageSmall);
-            //If the object contains a small painting build the HTML
-            if (response.primaryImageSmall !== "") {
-              getArtDetails(response);
-            }
-
-            /*
-            artImg.src=response.primaryImageSmall;
-            artist.innerHTML=`Artist: ${search}`;
-            artTitle.innerHTML=`Title: ${response.title}`;
-            artDate.innerHTML=`Date: ${response.objectDate}`;
-            artDesc.innerHTML=`Description: <a href="${response.objectURL}">${response.objectURL}</a>`;
-            */
-          });
+            
+            //If the object contains a small painting & is not blank or undefined build the HTML   
+            if( response.artistDisplayName.includes(search)  )   {
+              if ( typeof(response.primaryImageSmall) !== 'undefined') { 
+                if( response.primaryImageSmall !== "" ) {
+                getArtDetails(response);
+                }
+              }   
+            }         
+          })
+          .catch((error) => console.log("error", error));          
       }
     });
-  //.catch((error) => console.log("error", error));
+  //
 }
 
-/*const getArtData = function(search) {
-  fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?q=${search}`)
-    .then(response => {      
-      return response.json();
-    })
-    .then(response => {       
-      let html = "";
-      // loop thru the response object Id's and use the ID's to get the art work Objects      
-      for (let i=0; i < 5; i++ ){
-        //console.log("Id: #" + i + ": " + response.objectIDs[i]);
-        let fetchURL = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${response.objectIDs[i]}`;
-        //console.log(fetchURL);
-        fetch(fetchURL)                       // get the artwork object
-          .then( response => {
-            return response.json();           // convert the object to json
-          })
-          .then ( response => {
-            //console.log(response.title);
-            artImg.src=response.primaryImageSmall;
-            artist.innerHTML=`Artist: ${search}`;
-            artTitle.innerHTML=`Title: ${response.title}`;
-            artDate.innerHTML=`Date: ${response.objectDate}`;
-            artDesc.innerHTML=`Description: <a href="${response.objectURL}">${response.objectURL}</a>`;
-            
-          });
-          
-      }      
-    });
-    //.catch((error) => console.log("error", error));
-};
-*/
 
-/*
-async function getArtData (search) {
-  let response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?q=${search}`)
-    .then((response) => {
-      console.log("Response before JSon" +response);
-      console.log("Here's the ID's: " +response.json());     // this shows the Object Promise (IDS)
-      let IDs = response.json();
-      console.log("Ids maybe: " + IDs[0]);
 
-      // for each object ID, display the artwork in dropdown, and add an event listener
-      //for ( let artWork of response.data.results ) {    
-      //  console.log(artwork)  ; 
-        //ddHtml += `<option value="${character.id}"> ${character.name} </option>`;
-     })
-    .then((data) => { 
-      console.log("Here is the data:" + data[0]);
-      //console.log(data[0].title);
-    });
-    //.catch((error) => console.log("error", error));
-}
-*/
-//getArtData('Van Gogh');
-//getArtData('Monet');
+
+
