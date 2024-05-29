@@ -30,7 +30,7 @@ label {
 }
 
 .container {
-  border: 2px solid, black;  
+  /*border: 2px solid, black;  */
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -72,7 +72,7 @@ label {
 }
 */
 .images {
-  background-color: aqua;
+  /*background-color: aqua;*/
   /*border 2px soldi black;*/
 }
 
@@ -80,7 +80,7 @@ label {
   /*border: 2px solid rgb(3, 5, 133);*/
   padding: 10%;
   display: flex;
-  flex-flow: row;
+  flex-flow: column;  
 }
 
 .artImg {
