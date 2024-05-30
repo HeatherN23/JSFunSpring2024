@@ -112,8 +112,7 @@ async function getArtData(search) {
             error.innerHTML= `${error}`;   
         });          
       }
-    });
-  //
+    });  
 }
 
 
