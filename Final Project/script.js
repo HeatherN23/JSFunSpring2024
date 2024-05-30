@@ -27,60 +27,59 @@ const artist = document.querySelector(".artist");
 const artTitle = document.querySelector(".artTitle");
 const artDate = document.querySelector(".artDate");
 const artDesc = document.querySelector(".artDesc");
+const error = document.querySelector(".error");
 
 // listen for events
 //searchForm.addEventListener('submit', (e) => {
 artistDD.addEventListener("change", (e) => {
-  //console.log('I was clicked!');
-
-  e.preventDefault(); // PREVENT THE FORM FROM REFRESHING
-  //console.log(artistDD.value);
-  //const searchText2 = searchText.value;
+  e.preventDefault(); // PREVENT THE FORM FROM REFRESHING   
 
   //If the user selects a dropdown item, erase the existing artwork and get the enw Data
-  if (artistDD.value) {
+  if (artistDD.value !== "error") {
+    error.style.display = "none";
     gallery.innerHTML="";
+    error.innerHTML = "";  
     getArtData(artistDD.value);
   } else {
-    console.log("Pick an artist");
-  }
-
-  //console.log(searchText2);
-  //results.textContent=`No results for ${displayResults} found`;
+    // Show error message to user
+    error.innerHTML = `<h4>No Selection Made. Please select an artist.</h4>`;  
+    error.style.display = "block";   
+    gallery.innerHTML=
+    `  <div class="artRow">                                         
+          <div class="imageContainer">                                 
+            <img class="artImg" src="/images/generic_cubist_img.png" width="300"/>    
+          </div>                        
+          <div class="artData">
+            <h3 class="artist">Artist: Artist Name</h4>
+            <h4 class="artTitle">Title: Artwork</h3>            
+            <p class="artDate">Date: 12/12/1912</p>            
+            <p class="artDesc">More Details: <span class="error">Please select an artist to populate this area.</span></p>
+          </div>
+        </div>             
+        `;  
+  }            
+   
 });
-/*
-const getArtData = function (search) {
-  
-  let artResults = axios.get("https://collectionapi.metmuseum.org/public/collection/v1/search?q=sunflowers");
-  console.log(artResults.value);
-
-};*/
 
 function getArtDetails(response) {
   let html = `  
-    <div>                                
-      <img class="artImg" src="${response.primaryImageSmall}" width="300"/>
-    </div>                        
-    <div class="artData">
-      <h3 class="artist">Artist:${response.artistDisplayName}</h4>
-      <h4 class="artTitle">Title:${response.title}</h3>            
-      <p class="artDate">Date:${response.objectDate}</p>            
-      <p class="artDesc">Description:<a href="${response.objectURL}">${response.objectURL}</a></p>
+    <div class="artRow">
+      <div>                                
+        <img class="artImg" src="${response.primaryImageSmall}" width="300"/>
+      </div>                        
+      <div class="artData">
+        <h3 class="artist">Artist: ${response.artistDisplayName}</h4>
+        <h4 class="artTitle">Title: ${response.title}</h3>            
+        <p class="artDate">Date: ${response.objectDate}</p>            
+        <p class="artDesc">More Details: <a href="${response.objectURL}" target="_blank">${response.objectURL}</a></p>
+      </div>
     </div>
   `;
 
   let newDiv = document.querySelector(".gallery");
-  newDiv.insertAdjacentHTML("beforeend", html);
-  //newDiv.innerHTML=html;
-
-  /*
-  artImg.src=response.primaryImageSmall;
-  artist.innerHTML=`Artist: ${response.artistDisplayName}`;
-  artTitle.innerHTML=`Title: ${response.title}`;
-  artDate.innerHTML=`Date: ${response.objectDate}`;
-  artDesc.innerHTML=`Description: <a href="${response.objectURL}">${response.objectURL}</a>`;
-  */
+  newDiv.insertAdjacentHTML("beforeend", html);  
 }
+
 async function getArtData(search) {
   // Fetch the artist ID
   let response = await fetch(
@@ -114,7 +113,9 @@ async function getArtData(search) {
               }   
             }         
           })
-          .catch((error) => console.log("error", error));          
+          .catch((error) => {
+            error.innerHTML= `${error}`;   
+        });          
       }
     });
   //

@@ -13,48 +13,41 @@
     <main class="container">      
       <div class="title">
         <h1> Welcome to the Art Gallery Search Page</h1>
+      </div>      
+      <div class="error">
+        <!-- add user error msg here-->        
       </div>
-      <!--<form id="searchForm" class="searchForm">
-        <div class="searchInput">
-          <input
-            id="searchText"
-            name="searchText"
-            type="searchText"
-            placeholder="Search our collection by artist"            
-            class="searchBox"
-          />          
-          <button class="searchBtn" type="submit">Search</button>          
-        </div>
-      </form> -->
       <div class="searchInput">
-        <label for="artDD"> Select an artist: </label>
-        <select class="artDD" id="artDD" name="artist" type="text">
-          <option value=""></option>
-          <option value="Rembrandt van Rijn">Rembrandt van Rijn</option>
-          <option value="Bruegel">Bruegel</option>
-          <option value="Renoir">Renoir</option>
-          <option value="Winslow">Winslow</option>
-          <option value="da Vinci">da Vinci</option>
-          <option value="Degas">Degas</option>
-          <option value="Bierstadt">Bierstadt</option>
-          <option value="Albrecht">Durer</option>
-          <option value="Botticelli">Botticelli</option>
-          <option value="Church">Church</option>
-        </select>
+        
+          <label for="artDD"> Select an artist: </label>
+        
+          <select class="artDD" id="artDD" name="artist" type="text">
+            <option value="error"></option>
+            <option value="Rembrandt van Rijn">Rembrandt van Rijn</option>
+            <option value="Bruegel">Peter Bruegel the Elder</option>
+            <option value="Renoir">Auguste Renoir</option>
+            <option value="Winslow">Winslow Homer</option>
+            <option value="da Vinci">Leonardo da Vinci</option>
+            <option value="Degas">Edward Degas</option>
+            <option value="Bierstadt">Albert Bierstadt</option>
+            <option value="Albrecht">Albrecht Durer</option>
+            <option value="Botticelli">Botticelli</option>
+            <option value="Church">Frederic Edwin Church</option>
+          </select>        
       </div>
             
-      <div class="images">
-      <div class="gallery">  
-                                               
-          <div>                                
+      <div class="gallery">     
+        <div class="artRow">                                         
+          <div class="imageContainer">                                
             <img class="artImg" src="/images/generic_cubist_img.png" width="300"/>    
           </div>                        
           <div class="artData">
             <h3 class="artist">Artist: Artist Name</h4>
             <h4 class="artTitle">Title: Artwork</h3>            
             <p class="artDate">Date: 12/12/1912</p>            
-            <p class="artDesc">Description: Please select an artist to populate this area.</p>
+            <p class="artDesc">More Details: Please select an artist to populate this area.</p>
           </div>
+        </div>
              
       </div>  
             
