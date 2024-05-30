@@ -30,7 +30,6 @@ const artDesc = document.querySelector(".artDesc");
 const error = document.querySelector(".error");
 
 // listen for events
-//searchForm.addEventListener('submit', (e) => {
 artistDD.addEventListener("change", (e) => {
   e.preventDefault(); // PREVENT THE FORM FROM REFRESHING   
 
@@ -88,16 +87,12 @@ async function getArtData(search) {
     .then((response) => {
       return response.json();
     })
-    .then((response) => {
-      //let html = "";
+    .then((response) => {      
       // loop thru the response object Id's and use the ID's to get the art work Objects
-      console.log(response.objectIDs);
-      for (let i = 0; i < response.objectIDs.length  && i <=8; i++) {
-        //console.log("Id: #" + i + ": " + response.objectIDs[i]);
-        //Fetch the artwork by the artist.
-        //console.log(`objectIDs is ${response.objectIDs[i]}`);
+      
+      for (let i = 0; i < response.objectIDs.length  && i <=8; i++) {       
+        //Fetch the artwork by the artist.        
         let fetchURL = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${response.objectIDs[i]}`;
-        //console.log(fetchURL);
         fetch(fetchURL) // get the artwork object
           .then((response) => {
             return response.json(); // convert the object to json
